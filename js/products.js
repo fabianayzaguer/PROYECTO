@@ -6,7 +6,6 @@ async function mostrarDatos(){
     console.log(json);
 
     json.products.forEach((product) => {
-        console.log(product.name);
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
