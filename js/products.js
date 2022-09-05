@@ -18,7 +18,7 @@ async function mostrarDatos(){
                         <h4>`+ product.name +` - USD ` + product.cost + `</h4> 
                         <p> `+ product.description +`</p> 
                         </div>
-                        <small class="text-muted">` + '(en proceso)' + ` vendidos</small> 
+                        <small class="text-muted">` + product.soldCount + ` vendidos</small> 
                     </div>
 
                 </div>
@@ -30,5 +30,7 @@ async function mostrarDatos(){
 }
 
 mostrarDatos();
+
+
 
 

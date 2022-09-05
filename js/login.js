@@ -22,6 +22,9 @@ let form = document.getElementById('formulario');
             location.href ='home.html';
             console.log('Formulario Enviado..');
             vacio = true
+            guardarUsuario();
+
+
         }
         
         if(vacio){
@@ -34,3 +37,11 @@ let form = document.getElementById('formulario');
 
         
      })
+
+    function guardarUsuario(){
+        let usuario = email.value ;
+
+        localStorage.setItem("usuario",JSON.stringify(usuario));
+    
+    }
+     
