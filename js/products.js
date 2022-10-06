@@ -1,5 +1,6 @@
 async function mostrarDatos(){
-    const response = await fetch("https://japceibal.github.io/emercado-api/cats_products/101.json");
+    let id = obtenerLocalStorage("catID")
+    const response = await fetch(`https://japceibal.github.io/emercado-api/cats_products/${id}.json`);
     const json = await response.json();
     let htmlContentToAppend = "";
 
@@ -7,9 +8,10 @@ async function mostrarDatos(){
 
     json.products.forEach((product) => {
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
+        
+        <div onclick="setProdId(${product.id})" class="list-group-item list-group-item-action">
+            <div class="row" >
+            <div class="col-3">
                     <img src="` + product.image + `" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
@@ -30,6 +32,16 @@ async function mostrarDatos(){
 }
 
 mostrarDatos();
+
+
+function setProdId(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
+function obtenerLocalStorage(clave){
+    return localStorage.getItem(clave); }
+ 
 
 
 

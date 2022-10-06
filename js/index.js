@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
-let usuario = document.getElementById("nomusuario");
+
 obtenerLocalStorage();
-//localStorage.setItem("usuario", JSON.stringify(usuario)); 
-   document.getElementById("nomusuario").innerHTML = `<p> ${usuario.value} <p/>`;
+
+   document.getElementById("nomusuario").innerHTML = `${usuario}`;
 
 
 
 
 function obtenerLocalStorage(){
-    localStorage.getItem("usuario", usuario);
-    console.log(usuario.value)
+   usuario = localStorage.getItem("usuario");
+   
 }
 
 
