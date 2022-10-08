@@ -8,6 +8,12 @@ async function mostrarDatos(){
 
     console.log(json);
 
+   let htmlparaimagen = ""
+     for (let imagen of json.images){
+        
+        htmlparaimagen += `<img src = "${imagen}">`
+     }
+  
           {htmlContentToAppend += `
         
           <div class="row" >
@@ -22,10 +28,7 @@ async function mostrarDatos(){
                       <br><h4> Categoria </h4> <small class="text-muted">` + json.soldCount + ` vendidos</small> <br>
                      
                       <br><h4> Imagenes ilustrativas </h4>
-                      <img src="` + json.images + `" alt="product image" class="img-thumbnail">
-                      <img src="` + json.images + `" alt="product image" class="img-thumbnail">
-                      <img src="` + json.images + `" alt="product image" class="img-thumbnail">
-                      <img src="` + json.images + `" alt="product image" class="img-thumbnail">
+                      ${htmlparaimagen}
                   </div>
 
               </div>
@@ -47,10 +50,21 @@ async function mostrarDatos(){
      `
         
         document.getElementById('producto-info') . innerHTML = htmlContentToAppend;
-    };  
-}
+    
+    }; 
 
+    let htmlrelacionados = ""
+     for (let productorelacionado of json.relatedProducts){
+        console.log (productorelacionado);
+     
 
+        htmlrelacionados += `<div><p> ${productorelacionado.name}</p> <img src = ${productorelacionado.image}></div>`
+       
+    }; document.getElementById(`relacionados`) . innerHTML = htmlrelacionados;
+    
+    }
+     
+    
 mostrarDatos();
 
 
