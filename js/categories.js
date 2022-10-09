@@ -6,6 +6,7 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
+
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -41,6 +42,7 @@ function setCatID(id) {
 }
 
 function showCategoriesList(){
+    
 
     let htmlContentToAppend = "";
     for(let i = 0; i < currentCategoriesArray.length; i++){
@@ -68,6 +70,7 @@ function showCategoriesList(){
         }
 
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+   
     }
 }
 

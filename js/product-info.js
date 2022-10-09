@@ -1,5 +1,6 @@
 async function mostrarDatos(){
    
+    let usuario = obtenerLocalStorage("usuario")
     let prodID = obtenerLocalStorage("prodID")
     const response = await fetch(`https://japceibal.github.io/emercado-api/products/${prodID}.json`);
     const json = await response.json();
@@ -61,11 +62,13 @@ async function mostrarDatos(){
         htmlrelacionados += `<div><p> ${productorelacionado.name}</p> <img src = ${productorelacionado.image}></div>`
        
     }; document.getElementById(`relacionados`) . innerHTML = htmlrelacionados;
-    
+
+       document.getElementById("nomusuario"). innerHTML = `${usuario}`;
     }
      
-    
+   
 mostrarDatos();
+
 
 
 function setProdId(id) {
