@@ -59,7 +59,12 @@ async function mostrarDatos(){
         console.log (productorelacionado);
      
 
-        htmlrelacionados += `<div><p> ${productorelacionado.name}</p> <img src = ${productorelacionado.image}></div>`
+        htmlrelacionados += `
+        <div onclick="setProdId(${productorelacionado.id})"> 
+        <p> ${productorelacionado.name}</p> 
+        <img src = ${productorelacionado.image}>
+        
+        </div>`
        
     }; document.getElementById(`relacionados`) . innerHTML = htmlrelacionados;
 
