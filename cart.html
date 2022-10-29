@@ -50,6 +50,55 @@
     <div class="container" id="carrito">
     </div>
     <div class="container" id="costos"></div>
+    <div class="col-sm-12">
+
+        <div class="invalid-feedback">Debe aceptar los terminos y condiciones</div>
+    </div>
+
+
+    <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Forma de pago</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <fieldset>
+                <label>
+                <input type="radio" name="formaPago" value="Tarjeta"> Tarjeta de crédito</input>
+                  </label>
+                <hr>
+                <label>
+                <input type="text" name="numTarjeta" id="numTarjeta">
+              </label>
+              <br>
+                <label for="codigoSeg">Código de Seg.
+                <input type="text" name="codigoSeg" id="codigoSeg"></label>
+              <br>
+                <label for="vencimiento">vencimiento (MM/AA)
+                <input type="text" name="vencimiento" id="vencimiento"></label>
+              <br>
+              <input type="radio" name="formaPago" value="Transferencia"> Transferencia bancaria </input>
+              <hr>
+                <label for="numCuenta">Número de cuenta
+                <input type="text" id="numCuenta" name="numCuenta"></label>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div >
+      <div class="col-auto  p-5 text-center">
+        <button class="btn btn-primary" type="submit">Finalizar compra</button>
+      </div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">

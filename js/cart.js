@@ -28,7 +28,7 @@ async function mostrarDatos(){
                     <th><img style="max-width: 70px;" src = ${product.image}></th>
                     <td>${product.name}</td>
                     <td>${product.unitCost}${product.currency}</td>
-                    <td><input type="number"  id="cantidad"></td>
+                    <td><input type="number"  id="cantidad" value=1></td>
                     <td id=subtotal>${product.unitCost} </td>
                 </tr>
             </table>
@@ -38,7 +38,7 @@ async function mostrarDatos(){
 
         <div>
             <fieldset onclick="tipoEnvio(${product.unitCost})">
-                <legend>Tipo de envíor</legend>
+                <legend>Tipo de envío</legend>
                 <label>
                     <input type="radio" name="envio" value="premium"> Premium 2 a 5 dias (15%)
                 </label> <br>
@@ -59,14 +59,15 @@ async function mostrarDatos(){
 
         <div>
             <h3>Costos<h3>
-        <div class="list-group-item list-group-item-action">
-            <div class="col">
-                <div class="d-flex w-100 justify-content-between">
-                    <div class="mb1">
-                        <h4>Subtotal</h4> 
-                        <p class="text-muted">Costo unitario del producto por cantidad</p> 
+            <div class="list-group-item list-group-item-action">
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="mb1">
+                            <h4>Subtotal</h4> 
+                            <p class="text-muted">Costo unitario del producto por cantidad</p> 
+                        </div>
+                        <small id="subtotal2"> </small> 
                     </div>
-                    <small id="subtotal2"> </small> 
                 </div>
             </div>
         </div>
@@ -78,7 +79,7 @@ async function mostrarDatos(){
                         <h4>Costo de envío</h4> 
                         <p class="text-muted">Según el tipo de envío</p> 
                     </div>
-                    <small class="text-muted"  id="costoEnvio"> </small> 
+                    <small class="text-muted"  id="costoEnvio">USD</small> 
                 </div>
             </div>
         </div>
@@ -94,14 +95,27 @@ async function mostrarDatos(){
 
             </div>
         </div>
+
+        <hr>
+
+        <div >
+            <h3>Forma de pago</h3>
+            <small class="text-muted"> No ha seleccionado  </small>
+            <input type="button" class="btn btn-link ps-0" data-bs-toggle="modal"
+            data-bs-target="#modalTerminos" id="boton-terminos" value="Seleccionar">
+        </div>
+
+   
+       
         ` 
     
         addEventListener('click', (e) => {});
 
         oninput = (e) => {
-        var cantidad = document.getElementById("cantidad");
-        document.getElementById("subtotal").innerHTML =  product.unitCost*cantidad.value;
-        document.getElementById("subtotal2").innerHTML =  product.unitCost*cantidad.value;
+            var cantidad = document.getElementById("cantidad");
+             document.getElementById("subtotal").innerHTML =  product.unitCost*cantidad.value;
+            
+         document.getElementById("subtotal2").innerHTML =  product.unitCost*cantidad.value;
         tipoEnvio(product.unitCost);
         };
 
@@ -121,7 +135,6 @@ function tipoEnvio(product) {
     var ele = document.getElementsByName('envio');
     var i = 0;   
     while(i < ele.length) {
-        console.log('i = ' + i.toString());
 
         if(ele[i].checked) {
             
@@ -133,23 +146,30 @@ function tipoEnvio(product) {
     }      
 
     var cantidad = document.getElementById("cantidad");
+    var subtotal = document.getElementById("subtotal");
 
     switch (valueCombo) { 
        
         case "premium":
-            var costoEnvio = product * cantidad.value * 0.15; //15%
+            var costoEnvio = product * cantidad.value * 0.015; //15%
             document.getElementById("costoEnvio").innerHTML = (costoEnvio).toString();
-            console.log("costoEnvio");
+            document.getElementById("total").innerHTML =  costoEnvio + product * cantidad.value;
             break;
         case "express":
-            var costoEnvio = product * cantidad.value * 0.7; //7%
+            var costoEnvio = product * cantidad.value * 0.07; //7%
             document.getElementById("costoEnvio").innerHTML = costoEnvio.toString();
+            document.getElementById("total").innerHTML =  costoEnvio + product * cantidad.value;
           break;
     
         case "standard": 
-            var costoEnvio = product * cantidad.value * 0.5; //5%
+            var costoEnvio = product * cantidad.value * 0.05; //5%
+            
             document.getElementById("costoEnvio").innerHTML = costoEnvio.toString();
+            document.getElementById("total").innerHTML = costoEnvio + product * cantidad.value;
+            
           break;
     
       }
 }
+
+
