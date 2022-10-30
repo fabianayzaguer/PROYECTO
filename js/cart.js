@@ -101,8 +101,7 @@ async function mostrarDatos(){
         <div >
             <h3>Forma de pago</h3>
             <small class="text-muted"> No ha seleccionado  </small>
-            <input type="button" class="btn btn-link ps-0" data-bs-toggle="modal"
-            data-bs-target="#modalTerminos" id="boton-terminos" value="Seleccionar">
+           
         </div>
 
    
@@ -113,7 +112,7 @@ async function mostrarDatos(){
 
         oninput = (e) => {
             var cantidad = document.getElementById("cantidad");
-             document.getElementById("subtotal").innerHTML =  product.unitCost*cantidad.value;
+            document.getElementById("subtotal").innerHTML =  product.unitCost*cantidad.value;
             
          document.getElementById("subtotal2").innerHTML =  product.unitCost*cantidad.value;
         tipoEnvio(product.unitCost);
@@ -171,5 +170,3 @@ function tipoEnvio(product) {
     
       }
 }
-
-
