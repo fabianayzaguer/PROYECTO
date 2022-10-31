@@ -46,60 +46,103 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main class="container">
+    <div class="container" id="alerta"></div>
     <div class="container" id="carrito">
     </div>
-    <div class="container" id="costos"></div>
-    <div class="col-sm-12">
+    <form action="#" method="get" class="row mt-4 needs-validation" novalidate id="form">
+      <div class="container" id="tipo"></div>
+      
+          <div class="container" id="direccion">
+              <div class="col">
+                  <h4> Dirección de envío </h4>
+                  <div class="col-sm-6">
+                    <label for="calle" class="form-label">Calle</label>
+                    <input type="text" class="form-control" id="calle" required>
+                    <div class="invalid-feedback">Ingrese calle</div>
+                  </div>
 
-        <div class="invalid-feedback">Debe aceptar los terminos y condiciones</div>
-    </div>
+                  <div class="col-sm-6">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="numero" required>
+                    <div class="invalid-feedback">Ingrese número</div>
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <label for="esquina" class="form-label">Esquina</label>
+                    <input type="text" class="form-control" id="esquina" required>
+                    <div class="invalid-feedback">Ingrese esquina</div>
+                  </div>
+                  
+              </div> 
+          <hr>
+      </div>
 
+        <div class="container" id="costos"></div>
+        <div class="container" id="seleccionarPago"></div>   
 
-    <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="modalPagos" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5">Forma de pago</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
-              <fieldset>
-                <label>
-                <input type="radio" name="formaPago" value="Tarjeta"> Tarjeta de crédito</input>
-                  </label>
-                <hr>
-                <label>
-                <input type="text" name="numTarjeta" id="numTarjeta">
-              </label>
-              <br>
-                <label for="codigoSeg">Código de Seg.
-                <input type="text" name="codigoSeg" id="codigoSeg"></label>
-              <br>
-                <label for="vencimiento">vencimiento (MM/AA)
-                <input type="text" name="vencimiento" id="vencimiento"></label>
-              <br>
-              <input type="radio" name="formaPago" value="Transferencia"> Transferencia bancaria </input>
-              <hr>
-                <label for="numCuenta">Número de cuenta
-                <input type="text" id="numCuenta" name="numCuenta"></label>
-              </fieldset>
+            <form action="#" method="get" class="row mt-4 needs-validation" novalidate>
+              <div class="col">
+                <fieldset onclick="cambiarRequired()" id="medioPago">
+                    <input type="radio" name="formaPago" value="tarjeta" required checked> Tarjeta de crédito
+                    </label>
+
+                    <hr>
+                  
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="numTarjeta" class="form-label">Número de tarjeta</label>
+                      <input type="text" class="form-control" id="numTarjeta" required>
+                      <div class="invalid-feedback">Ingrese su tarjeta</div>
+                    </div>
+        
+                    <div class="col-sm-6">
+                      <label for="codSeg" class="form-label">Código de seg.</label>
+                      <input type="text" class="form-control" id="codSeg" required>
+                      <div class="invalid-feedback">Ingrese su código de seguridad</div>
+                    </div>
+        
+                    <div class="col-12">
+                      <label for="vencimiento" class="form-label">Vencimiento (MM/AA)</label>
+                      <input type="text" class="form-control" id="vencimiento" required>
+                      <div class="invalid-feedback">Ingrese el vencimiento (MM/AA)</div>
+                    </div>
+        
+                    <label>
+                    <input type="radio" name="formaPago" value="transferencia"> Transferencia bancaria
+                    </label>
+
+                    <hr>
+
+                    <div class="col-sm-6">
+                      <label for="numeroCuenta" class="form-label">Número de cuenta</label>
+                      <input type="text" class="form-control" id="numeroCuenta" disabled>
+                      <div class="invalid-feedback">Ingrese número de cuenta</div>
+                    </div>
+        
+                  <button class="btn btn-primary" data-bs-dismiss="modal" onclick="cambiarSeleccion()">Cerrar</button>
+                  
+                </fieldset>
+      
+                </div>
+              </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary" type="submit">Cerrar</button>
-          </div>
+          
         </div>
       </div>
     </div>
 
-    <div >
-      <div class="col-auto  p-5 text-center">
-        <button class="btn btn-primary" type="submit">Finalizar compra</button>
-      </div>
-    </div>
+    </form>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
