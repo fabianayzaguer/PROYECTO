@@ -15,14 +15,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 obtenerLocalStorage();
 
-   document.getElementById("nomusuario").innerHTML = `${usuario}`;
-
-
-
-
 function obtenerLocalStorage(){
    usuario = localStorage.getItem("usuario");
-   
+   document.getElementById("nomusuario").innerHTML = usuario;
 }
+
 
 

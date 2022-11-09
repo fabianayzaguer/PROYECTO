@@ -47,7 +47,7 @@
           <li class="nav-item">
             <div class="dropdown">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="nomusuario" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown link
+                
               </a>
             
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -61,11 +61,56 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main class="pb-5">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="p-4">
+        <h1>Perfil</h1><br><hr>
       </div>
+      <form >
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="primer-nombre" class="form-label">Primer nombre*</label>
+            <input type="text" class="form-control" id="primer-nombre" required>
+            <div class="invalid-feedback">Ingrese primer nombre</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="segundo-nombre" class="form-label">Segundo nombre*</label>
+            <input type="text" class="form-control" id="segundo-nombre" required>
+            <div class="invalid-feedback">Ingrese segundo nombre</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="primer-apellido" class="form-label">Primer apellido*</label>
+            <input type="text" class="form-control" id="primer-apellido" required>
+            <div class="invalid-feedback">Ingrese primer-apellido</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="segundo-apellido" class="form-label">Segundo apellido*</label>
+            <input type="text" class="form-control" id="segundo-apellido" required>
+            <div class="invalid-feedback">Ingrese segundo-apellido</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="e-mail" class="form-label">E-mail*</label>
+            <input type="email" class="form-control" id="e-mail" required>
+            <div class="invalid-feedback">Ingrese E-mail</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="telefono" class="form-label">Telefono de contacto*</label>
+            <input type="tel" class="form-control" id="telefono" required>
+            <div class="invalid-feedback">Ingrese un telefono de contacto</div>
+          </div>
+            
+          <div class="p-4">
+            <br><hr>
+          </div>
+        </div>
+          <button class="btn btn-primary btn-lg" type="submit" >Guardar cambios</button>
+        
+      </form>
     </div>
   </main>
   <footer class="text-muted">
