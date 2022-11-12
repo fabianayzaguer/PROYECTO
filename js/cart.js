@@ -133,6 +133,7 @@ async function mostrarDatos(){
 };
 
 mostrarDatos();
+
 function obtenerLocalStorage(clave){
     return localStorage.getItem(clave); }
 
